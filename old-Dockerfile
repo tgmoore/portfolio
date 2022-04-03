@@ -1,0 +1,45 @@
+# syntax=docker/dockerfile:1
+
+# source image
+FROM node:alpine as builder
+
+# req'd for tests
+#RUN apk add chromium
+
+#ENV CHROME_BIN=/usr/bin/chromium_browser
+
+WORKDIR /app
+
+ENV PATH=${PATH}:./node_modules/.bin
+
+ENV NODE_PATH=/app/node_modules
+
+COPY package*.json /app
+
+RUN npm ci --prefer-offline --no-audit
+
+RUN ngcc
+
+COPY /src /app/src
+
+COPY ["angular.json", "tsconfig*.json", "karma.conf.js", "/app/"]
+
+#RUN npm run test
+
+RUN npm run build --prod
+
+RUN npm prune --production
+
+# begin multistage build
+FROM node:alpine
+
+USER node
+
+WORKDIR /app
+COPY --chown=node:node --from=builder /app/dist ./dist
+COPY --chown=node:node --from=builder /app/node_modules ./node_modules
+COPY --chown=node:node package.json ./
+
+EXPOSE 4200
+
+CMD ng serve --host 0.0.0.0 --disable-host-check
