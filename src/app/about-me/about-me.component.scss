@@ -11,26 +11,27 @@
   flex-direction: column;
 }
 
+.notice {
+  animation-name: notice;
+  animation-duration: 2500ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1500ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes notice {
+  5% { transform: rotate(2deg); }
+  10% { transform: rotate(-2deg); }
+  15% { transform: rotate(2deg); }
+  20%, 100% { transform: rotate(0deg); }
+}
+
 .bug {
   height: 80%;
   width: 80%;
   max-height: 80px;
   max-width: 80px;
   margin: 10px 0 10px 0;
-}
-
-.shake:hover {
-  animation-name: shake;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes shake {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-  75% { transform: rotate(2deg); }
-  100% { transform: rotate(0deg); }
 }
 
 .content {
@@ -52,16 +53,38 @@
     img {
       height: auto;
       max-width: 100%;
+      min-width: 263px;
+      min-height: 342px;
     }
   }
 
   .about {
+    display: flex;
+    flex-direction: column;
     border-radius: 4px;
     height: 100%;
     width: 50%;
     background: $copper70;
     padding: 10px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-y: auto;
+
+    .tech {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-radius: 4px;
+      background: $copper;
+      padding: 10px;
+
+      .icon {
+        height: 40px;
+        width: 40px;        
+      }
+
+      .white {
+        background: white;
+      }
+    }
   }
 }

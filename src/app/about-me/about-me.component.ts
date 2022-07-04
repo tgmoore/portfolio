@@ -1,7 +1,5 @@
 import { animate, state, style, transition, trigger, AnimationEvent } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-
-import { BehaviorSubject, Observable, throttleTime, tap } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'about-me',
@@ -28,35 +26,19 @@ import { BehaviorSubject, Observable, throttleTime, tap } from 'rxjs';
     ])
   ]
 })
-export class AboutMeComponent implements OnInit {
-  private _canShake = new BehaviorSubject(true);
-
-  canShake = this._observeShake();
+export class AboutMeComponent {
   isExpanded = false;
+  isNoticed = false;
   showContent = false;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  onAnimationDone(event: AnimationEvent) {
-    this._canShake.next(event.toState === 'small');
-  }
 
   onAnimationStart(event: AnimationEvent) {
     this.showContent = event.fromState === 'small';
   }
 
   toggle() {
-    this._canShake.next(this.isExpanded);
     this.isExpanded = !this.isExpanded;
-  }
-
-  _observeShake() {
-    return this._canShake.asObservable().pipe(
-      throttleTime(500),
-      tap(console.log)
-    );
+    this.isNoticed = true;
   }
 }
