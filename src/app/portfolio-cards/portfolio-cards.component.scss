@@ -1,0 +1,28 @@
+@import "../../shared/variables.scss";
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100%
+}
+
+.card {
+  border: 1px black;
+  border-radius: 4px;
+  height: 150px;
+  width: 150px;
+  background-color: $copper;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linked-in {
+  max-width: 120px;
+}
+
+.scholar {
+  max-width: 120px;
+}

@@ -21,7 +21,7 @@ RUN npm prune --production
 # Stage 2: run
 FROM nginx:1.21-alpine as runner
 
-COPY --from=builder /app/dist/tm-portfolio /usr/share/nginx/html
+COPY --from=builder /app/dist/portfolio /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY security-headers.conf  /etc/nginx/
 

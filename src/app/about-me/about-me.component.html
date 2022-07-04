@@ -1,0 +1,15 @@
+<div class="mark" [ngClass]="{ 'shake': canShake | async }" (click)="toggle()"
+    [@expand]="isExpanded ? 'large' : 'small'"
+    (@expand.done)="onAnimationDone($event)"
+    (@expand.start)="onAnimationStart($event)"
+    >
+  <img class="bug" src="/assets/tgm.svg"/>
+  <div *ngIf="showContent" class="content">
+    <div class="portrait">
+      <img src="/assets/portrait.png" />
+    </div>
+    <div class="about">
+      Nice to meet you, my name is Tyler. I'm a full stack developer with a Ph.D. in Computer Science.
+    </div>
+  </div>
+</div>

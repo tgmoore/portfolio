@@ -6,3 +6,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: var($azure);
 }
+
+.bar {
+  height: 50px;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,11 @@
+@import "../shared/variables.scss";
+
+.top {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  height: calc(100vh - 100px);
+  background: $azure;
+}
