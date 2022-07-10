@@ -1,4 +1,4 @@
-<div class="mark" [ngClass]="{ 'notice': !isNoticed}" (click)="toggle()"
+<div class="mark" [ngClass]="{ 'notice': !isNoticed}" (click)="toggle()" (keypress)="toggle()" tabindex="1"
     [@expand]="isExpanded ? 'large' : 'small'"
     (@expand.start)="onAnimationStart($event)"
     (@expand.done)="onAnimationDone($event)"
