@@ -29,12 +29,27 @@ import { Component } from '@angular/core';
 export class AboutMeComponent {
   isExpanded = false;
   isNoticed = false;
+  scrollable = true;
   showContent = false;
 
   constructor() { }
 
   onAnimationStart(event: AnimationEvent) {
-    this.showContent = event.fromState === 'small';
+    if (event.fromState === 'small') {
+      this.showContent = true;
+    }
+
+    this.scrollable = false;
+  }
+
+  onAnimationDone(event: AnimationEvent) {
+    if (event.toState === 'small') {
+      this.showContent = false;
+    }
+
+    if (event.toState === 'large') {
+      this.scrollable = true;
+    }
   }
 
   toggle() {

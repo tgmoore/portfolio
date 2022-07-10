@@ -1,14 +1,15 @@
 <div class="mark" [ngClass]="{ 'notice': !isNoticed}" (click)="toggle()"
     [@expand]="isExpanded ? 'large' : 'small'"
     (@expand.start)="onAnimationStart($event)"
+    (@expand.done)="onAnimationDone($event)"
     >
-  <img class="bug" src="/assets/tgm.svg"/>
+  <img class="bug" src="/assets/tgm.svg" alt="TGM initials"/>
   <div *ngIf="showContent" class="content">
     <div class="portrait">
       <img src="/assets/portrait.png" alt="Tyler Moore in an Animal Crossing villager style, drawn by Bridget Nagdeman @bnaggy"
           title="Drawn by Bridget Nagdeman, @bnaggy" />
     </div>
-    <div class="about">
+    <div class="about" [ngClass]="{ 'no-scroll': !scrollable }">
       <p>
         Nice to meet you, my name is Tyler. I'm a full stack developer with a Ph.D. in Computer Science.
       </p>

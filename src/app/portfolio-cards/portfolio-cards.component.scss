@@ -19,16 +19,10 @@
   align-items: center;
 }
 
-.github {
-  cursor: pointer;
-}
-
-.linked-in {
+.card-content {
+  max-height: 120px;
   max-width: 120px;
-  cursor: pointer;
-}
-
-.scholar {
-  max-width: 120px;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
 }
