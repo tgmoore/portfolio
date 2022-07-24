@@ -6,7 +6,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./portfolio-cards.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PortfolioCardsComponent{
+export class PortfolioCardsComponent {
   constructor() { }
 
   goTo(link: string) {

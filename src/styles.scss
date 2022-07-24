@@ -7,6 +7,11 @@ body {
   background: var($azure);
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .bar {
   height: 50px;
   background: $blue;

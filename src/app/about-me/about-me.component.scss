@@ -2,6 +2,8 @@
 
 .mark {
   border-radius: 4px;
+  border: 1px solid darken($copper, 5%);
+  box-shadow: 0px 0px 5px 1px darken($copper, 5%);
   height: 100px;
   width: 100px;
   background: $copper;
@@ -53,10 +55,13 @@
     
     img {
       height: auto;
-      max-width: 100%;
       min-width: 263px;
       min-height: 342px;
     }
+  }
+
+  .full-width {
+    width: 100% !important;
   }
 
   .about {
@@ -70,13 +75,17 @@
     box-sizing: border-box;
     overflow-y: auto;
 
+    scrollbar-gutter: stable both-edges;
+    scrollbar-width: thin;
+    scrollbar-color: blue none;
+
     .tech {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       border-radius: 4px;
       background: $copper;
-      padding: 10px;
+      padding: 8px;
 
       .icon {
         height: 40px;
@@ -86,7 +95,24 @@
       .white {
         background: white;
       }
+
+      .contain {
+        object-fit: contain;
+      }
     }
+  }
+
+  .about::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .about::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  .about::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 20px;
   }
 
   .no-scroll {

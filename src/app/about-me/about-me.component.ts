@@ -1,5 +1,8 @@
 import { animate, state, style, transition, trigger, AnimationEvent } from '@angular/animations';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+
+import { map } from 'rxjs';
 
 @Component({
   selector: 'about-me',
@@ -31,8 +34,9 @@ export class AboutMeComponent {
   isNoticed = false;
   scrollable = true;
   showContent = false;
+  showPortrait = this.responsive.observe('(min-width: 850px)').pipe(map(x => x.matches));
 
-  constructor() { }
+  constructor(private responsive: BreakpointObserver) { }
 
   onAnimationStart(event: AnimationEvent) {
     if (event.fromState === 'small') {

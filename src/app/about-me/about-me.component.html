@@ -5,11 +5,11 @@
     >
   <img class="bug" src="/assets/tgm.svg" alt="TGM initials"/>
   <div *ngIf="showContent" class="content">
-    <div class="portrait">
+    <div *ngIf="showPortrait | async" class="portrait">
       <img src="/assets/portrait.png" alt="Tyler Moore in an Animal Crossing villager style, drawn by Bridget Nagdeman @bnaggy"
           title="Drawn by Bridget Nagdeman, @bnaggy" />
     </div>
-    <div class="about" [ngClass]="{ 'no-scroll': !scrollable }">
+    <div class="about" [ngClass]="{ 'no-scroll': !scrollable, 'full-width': (showPortrait | async) === false }">
       <p>
         Nice to meet you, my name is Tyler. I'm a full stack developer with a Ph.D. in Computer Science.
       </p>
@@ -39,7 +39,7 @@
         <!-- By Google, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
         <img class="icon" src="/assets/tech/material.svg" alt="Material Design" title="Material" />
         <!-- By Amazon, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
-        <img class="icon" src="/assets/tech/aws.svg" alt="Amazon Web Services" title="AWS"/>
+        <img class="icon contain" src="/assets/tech/aws.svg" alt="Amazon Web Services" title="AWS"/>
         <!-- By Google, public domain -->
         <img class="icon" src="/assets/tech/flutter.svg" alt="Flutter" title="Flutter"/>
         <!-- By Oracle, public domain -->
