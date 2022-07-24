@@ -1,18 +1,18 @@
 <div class="content">
   <div class="cards">
     <div class="card">
-      <img class="card-content" src="/assets/github.png" alt="GitHub profile" title="GitHub"
-          (click)="goTo('https://github.com/tgmoore')" tabindex="2" (keypress)="goTo('https://github.com/tgmoore')"/>
+      <img class="card-content" src="/assets/github.png" alt="GitHub profile" title="GitHub" role="link"
+          (click)="goTo($event, 'https://github.com/tgmoore')" tabindex="0" (keydown)="goTo($event, 'https://github.com/tgmoore')"/>
     </div>
     <div class="card">
-      <img class="card-content" src="/assets/in.png" alt="LinkedIn profile" title="LinkedIn"
-          (click)="goTo('https://www.linkedin.com/in/tyler-moore-15688916a/')"
-          tabindex="3" (click)="goTo('https://www.linkedin.com/in/tyler-moore-15688916a/')"/>
+      <img class="card-content" src="/assets/in.png" alt="LinkedIn profile" title="LinkedIn" role="link"
+          (click)="goTo($event, 'https://www.linkedin.com/in/tyler-moore-15688916a/')"
+          tabindex="0" (keydown)="goTo($event, 'https://www.linkedin.com/in/tyler-moore-15688916a/')"/>
     </div>
     <div class="card">
       <img class="card-content" src="/assets/scholar.svg" alt="Google Scholar profile" title="Google Scholar"
-          (click)="goTo('https://scholar.google.com/citations?user=SrtnzQEAAAAJ')"
-          tabindex="4" (click)="goTo('https://scholar.google.com/citations?user=SrtnzQEAAAAJ')"/>
+          role="link" (click)="goTo($event, 'https://scholar.google.com/citations?user=SrtnzQEAAAAJ')" tabindex="0" 
+          (keydown)="goTo($event, 'https://scholar.google.com/citations?user=SrtnzQEAAAAJ')"/>
     </div>
   </div>
 </div>

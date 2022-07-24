@@ -7,9 +7,15 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioCardsComponent {
+  private actionCodes = new Set(['Enter', 'Space', ' ', 'Spacebar']);
+
   constructor() { }
 
-  goTo(link: string) {
-    window.open(link);
+  goTo(event: KeyboardEvent | MouseEvent, link: string) {
+    
+    if (event.type === 'click'
+        || this.actionCodes.has((event as KeyboardEvent)?.code)) {
+        window.open(link);
+    }
   }
 }
