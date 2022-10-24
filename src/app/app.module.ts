@@ -1,5 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { BarComponent } from './bar/bar.component';
@@ -16,7 +17,8 @@ import { PortfolioCardsComponent } from './portfolio-cards/portfolio-cards.compo
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@
   <img class="bug" src="/assets/tgm.svg" alt="TGM initials"/>
   <div *ngIf="showContent" class="content">
     <div *ngIf="showPortrait | async" class="portrait" aria-labelledby="tylerPortrait" role="img">
-      <img src="/assets/portrait.png" id="tylerPortrait" aria-hidden="true"
+      <img ngSrc="/assets/portrait.png" id="tylerPortrait" aria-hidden="true" width="1200" height="1579" priority
           alt="Tyler Moore in an Animal Crossing villager style, drawn by Bridget Nagdeman @bnaggy" title="Drawn by Bridget Nagdeman, @bnaggy" />
     </div>
     <div class="about" [ngClass]="{ 'no-scroll': !scrollable, 'full-width': (showPortrait | async) === false }" role="region"
