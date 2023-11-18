@@ -1,10 +1,16 @@
-import { Meta } from '@angular/platform-browser';
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
+
+import { AboutMeComponent } from './about-me/about-me.component';
+import { BarComponent } from './bar/bar.component';
+import { PortfolioCardsComponent } from './portfolio-cards/portfolio-cards.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [AboutMeComponent, BarComponent, PortfolioCardsComponent]
 })
 export class AppComponent {
   title = 'tgmoore';

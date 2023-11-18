@@ -1,4 +1,5 @@
 import { animate, state, style, transition, trigger, AnimationEvent } from '@angular/animations';
+import { AsyncPipe, NgClass, NgIf, NgOptimizedImage } from '@angular/common';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { map } from 'rxjs';
 
 @Component({
   selector: 'about-me',
+  standalone: true,
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss'],
   animations: [
@@ -27,7 +29,8 @@ import { map } from 'rxjs';
         animate('.2s')
       ])
     ])
-  ]
+  ],
+  imports: [AsyncPipe, NgClass, NgIf, NgOptimizedImage]
 })
 export class AboutMeComponent {
   isExpanded = false;

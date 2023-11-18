@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'portfolio-cards',
+  standalone: true,
   templateUrl: './portfolio-cards.component.html',
   styleUrls: ['./portfolio-cards.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
