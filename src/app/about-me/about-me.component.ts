@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger, AnimationEvent } from '@angular/animations';
-import { AsyncPipe, NgClass, NgIf, NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgClass, NgOptimizedImage } from '@angular/common';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
@@ -29,7 +29,7 @@ import { map } from 'rxjs';
             ])
         ])
     ],
-    imports: [AsyncPipe, NgClass, NgIf, NgOptimizedImage]
+    imports: [AsyncPipe, NgClass, NgOptimizedImage]
 })
 export class AboutMeComponent {
   isExpanded = false;

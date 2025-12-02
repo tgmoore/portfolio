@@ -1,57 +1,61 @@
 <div class="mark" [ngClass]="{ 'notice': !isNoticed}" (click)="toggle()" (keypress)="toggle()" tabindex="0"
-    [attr.aria-expanded]="isExpanded" aria-controls="aboutContent" id="aboutAccordion" role="button"
-    aria-label="About Accordion"
-    [@expand]="isExpanded ? 'large' : 'small'"
-    (@expand.start)="onAnimationStart($event)"
-    (@expand.done)="onAnimationDone($event)"
-    > 
+  [attr.aria-expanded]="isExpanded" aria-controls="aboutContent" id="aboutAccordion" role="button"
+  aria-label="About Accordion"
+  [@expand]="isExpanded ? 'large' : 'small'"
+  (@expand.start)="onAnimationStart($event)"
+  (@expand.done)="onAnimationDone($event)"
+  >
   <img class="bug" src="/assets/tgm.svg" alt="TGM initials"/>
-  <div *ngIf="showContent" class="content">
-    <div *ngIf="showPortrait | async" class="portrait" aria-labelledby="tylerPortrait" role="img">
-      <img ngSrc="/assets/portrait.png" id="tylerPortrait" aria-hidden="true" width="1200" height="1579" priority
-          alt="Tyler Moore in an Animal Crossing villager style, drawn by Bridget Nagdeman @bnaggy" title="Drawn by Bridget Nagdeman, @bnaggy" />
-    </div>
-    <div class="about" [ngClass]="{ 'no-scroll': !scrollable, 'full-width': (showPortrait | async) === false }" role="region"
-        aria-label="About Tyler Moore" id="aboutContent">
-      <p>
-        Nice to meet you, my name is Tyler. I'm a full stack developer with a Ph.D. in Computer Science.
-      </p>
-      <p>
-        As a full-stack dev, I work on tools and applications that facilitate half a billion dollars of
-        whole loan trading activity.
-        As a scholar, my research interest is in the self-assembly of complex systems,
-        particularly tile self-assembly.
-      </p>
-      <p>
-        I like working with passionate collaborators to design accessible
-        systems that have a measurable impact.
-      </p>
-      <div class="tech">
-        <!-- By Jason Groce, public domain -->
-        <img class="icon" src="/assets/tech/csharp.svg" alt="C# programming language" title="C#" />
-        <!-- By Microsoft, public domain -->
-        <img class="icon" src="/assets/tech/dotnet.svg" alt="dotNet Framework" title="dotNet" />
-        <!-- By Microsoft, public domain -->
-        <img class="icon" src="/assets/tech/ts.svg" alt="Typescript programming language" title="Typescript" />
-        <!-- By Angular, CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ -->
-        <img class="icon" src="/assets/tech/angular.svg" alt="Angular javascript framework" title="Angular" />
-        <!-- By Salesforce, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
-        <img class="icon" src="/assets/tech/akita.svg" alt="Akita state management" title="Akita"/>
-        <!-- By ReactiveX, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
-        <img class="icon" src="/assets/tech/rx.svg" alt="ReactiveX for javascript" title="RxJS"/>
-        <!-- By Google, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
-        <img class="icon" src="/assets/tech/material.svg" alt="Material Design" title="Material" />
-        <!-- By Amazon, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
-        <img class="icon contain" src="/assets/tech/aws.svg" alt="Amazon Web Services" title="AWS"/>
-        <!-- By Google, public domain -->
-        <img class="icon" src="/assets/tech/flutter.svg" alt="Flutter" title="Flutter"/>
-        <!-- By Oracle, public domain -->
-        <img class="icon" src="/assets/tech/odb.png" alt="Oracle DB" title="Oracle DB, PL/SQL"/>
-        <!-- By Microsoft, public domain -->
-        <img class="icon white" src="/assets/tech/tsql.svg" alt="Microsoft SQL Server" title="MSSQL, T-SQL" />
-        <!-- By Redis, CC BY-SA 4.0 DEED -->
-        <img class="icon" src="/assets/tech/redis.svg" alt="Redis" title="Redis" />
+  @if (showContent) {
+    <div class="content">
+      @if (showPortrait | async) {
+        <div class="portrait" aria-labelledby="tylerPortrait" role="img">
+          <img ngSrc="/assets/portrait.png" id="tylerPortrait" aria-hidden="true" width="1200" height="1579" priority
+            alt="Tyler Moore in an Animal Crossing villager style, drawn by Bridget Nagdeman @bnaggy" title="Drawn by Bridget Nagdeman, @bnaggy" />
+          </div>
+        }
+        <div class="about" [ngClass]="{ 'no-scroll': !scrollable, 'full-width': (showPortrait | async) === false }" role="region"
+          aria-label="About Tyler Moore" id="aboutContent">
+          <p>
+            Nice to meet you, my name is Tyler. I'm a full stack developer with a Ph.D. in Computer Science.
+          </p>
+          <p>
+            As a full-stack dev, I work on tools and applications that facilitate half a billion dollars of
+            whole loan trading activity.
+            As a scholar, my research interest is in the self-assembly of complex systems,
+            particularly tile self-assembly.
+          </p>
+          <p>
+            I like working with passionate collaborators to design accessible
+            systems that have a measurable impact.
+          </p>
+          <div class="tech">
+            <!-- By Jason Groce, public domain -->
+            <img class="icon" src="/assets/tech/csharp.svg" alt="C# programming language" title="C#" />
+            <!-- By Microsoft, public domain -->
+            <img class="icon" src="/assets/tech/dotnet.svg" alt="dotNet Framework" title="dotNet" />
+            <!-- By Microsoft, public domain -->
+            <img class="icon" src="/assets/tech/ts.svg" alt="Typescript programming language" title="Typescript" />
+            <!-- By Angular, CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ -->
+            <img class="icon" src="/assets/tech/angular.svg" alt="Angular javascript framework" title="Angular" />
+            <!-- By Salesforce, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
+            <img class="icon" src="/assets/tech/akita.svg" alt="Akita state management" title="Akita"/>
+            <!-- By ReactiveX, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
+            <img class="icon" src="/assets/tech/rx.svg" alt="ReactiveX for javascript" title="RxJS"/>
+            <!-- By Google, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
+            <img class="icon" src="/assets/tech/material.svg" alt="Material Design" title="Material" />
+            <!-- By Amazon, Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0 -->
+            <img class="icon contain" src="/assets/tech/aws.svg" alt="Amazon Web Services" title="AWS"/>
+            <!-- By Google, public domain -->
+            <img class="icon" src="/assets/tech/flutter.svg" alt="Flutter" title="Flutter"/>
+            <!-- By Oracle, public domain -->
+            <img class="icon" src="/assets/tech/odb.png" alt="Oracle DB" title="Oracle DB, PL/SQL"/>
+            <!-- By Microsoft, public domain -->
+            <img class="icon white" src="/assets/tech/tsql.svg" alt="Microsoft SQL Server" title="MSSQL, T-SQL" />
+            <!-- By Redis, CC BY-SA 4.0 DEED -->
+            <img class="icon" src="/assets/tech/redis.svg" alt="Redis" title="Redis" />
+          </div>
+        </div>
       </div>
-    </div>
+    }
   </div>
-</div>
