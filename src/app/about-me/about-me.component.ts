@@ -6,31 +6,30 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'about-me',
-  standalone: true,
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.scss'],
-  animations: [
-    trigger('expand', [
-      state('small', style({
-        height: '100px',
-        width: '100px'
-      })),
-      state('large', style({
-        height: '600px',
-        width: '800px',
-        maxHeight: '90vh',
-        maxWidth: '90vw'
-      })),
-      transition('small => large', [
-        animate('.3s')
-      ]),
-      transition('large => small', [
-        animate('.2s')
-      ])
-    ])
-  ],
-  imports: [AsyncPipe, NgClass, NgIf, NgOptimizedImage]
+    selector: 'about-me',
+    templateUrl: './about-me.component.html',
+    styleUrls: ['./about-me.component.scss'],
+    animations: [
+        trigger('expand', [
+            state('small', style({
+                height: '100px',
+                width: '100px'
+            })),
+            state('large', style({
+                height: '600px',
+                width: '800px',
+                maxHeight: '90vh',
+                maxWidth: '90vw'
+            })),
+            transition('small => large', [
+                animate('.3s')
+            ]),
+            transition('large => small', [
+                animate('.2s')
+            ])
+        ])
+    ],
+    imports: [AsyncPipe, NgClass, NgIf, NgOptimizedImage]
 })
 export class AboutMeComponent {
   isExpanded = false;

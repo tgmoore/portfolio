@@ -6,11 +6,10 @@ import { BarComponent } from './bar/bar.component';
 import { PortfolioCardsComponent } from './portfolio-cards/portfolio-cards.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  imports: [AboutMeComponent, BarComponent, PortfolioCardsComponent]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [AboutMeComponent, BarComponent, PortfolioCardsComponent]
 })
 export class AppComponent {
   title = 'tgmoore';

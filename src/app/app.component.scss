@@ -1,4 +1,4 @@
-@import "../shared/variables.scss";
+@use "../shared/variables.scss";
 
 .top {
   position: relative;
@@ -7,6 +7,6 @@
 
 .content {
   height: calc(100vh - 100px);
-  background: $azure;
+  background: variables.$azure;
   overflow-y: auto;
 }

@@ -1,4 +1,4 @@
-@import "../../shared/variables.scss";
+@use "../../shared/variables.scss";
 
 .content {
   display: flex;
@@ -28,7 +28,7 @@
   border-radius: 4px;
   height: 150px;
   width: 150px;
-  background-color: $copper;
+  background-color: variables.$copper;
   display: flex;
   justify-content: center;
   align-items: center;

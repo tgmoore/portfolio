@@ -1,12 +1,13 @@
-@import "../../shared/variables.scss";
+@use "sass:color";
+@use "../../shared/variables.scss";
 
 .mark {
   border-radius: 4px;
-  border: 1px solid darken($copper, 5%);
-  box-shadow: 0px 0px 5px 1px darken($copper, 5%);
+  border: 1px solid color.adjust(variables.$copper, $lightness: -5%);
+  box-shadow: 0px 0px 5px 1px color.adjust(variables.$copper, $lightness: -5%);
   height: 100px;
   width: 100px;
-  background: $copper;
+  background: variables.$copper;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -51,7 +52,7 @@
     height: 100%;
     width: 50%;
     overflow: hidden;
-    background: $portraitBg;
+    background: variables.$portraitBg;
     
     img {
       height: auto;
@@ -70,7 +71,7 @@
     border-radius: 4px;
     height: 100%;
     width: 50%;
-    background: $copper70;
+    background: variables.$copper70;
     padding: 10px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -84,7 +85,7 @@
       gap: 10px;
       flex-wrap: wrap;
       border-radius: 4px;
-      background: $copper;
+      background: variables.$copper;
       padding: 8px;
 
       .icon {
@@ -111,7 +112,7 @@
   }
 
   .about::-webkit-scrollbar-thumb {
-    background-color: $teal;
+    background-color: variables.$teal;
     border-radius: 20px;
   }
 
